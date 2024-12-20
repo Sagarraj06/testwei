@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- <div class="container">
+        <h1>Login</h1>
+        <% if (error) { %>
+            <div class="error"><%= error %></div>
+        <% } %>
+        <form action="/login" method="POST">
+            <div>
+                <label>Email:</label>
+                <input type="email" name="email" required>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/signup">Sign up</a></p>
+    </div> -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                 <img src="./image/soulsyncnew-removebg-preview.png" >
+            </div>
+    
+            <nav class="nav-links">
+                <a href="./aboutus">About Us</a>
+                <a href="./contactus">Contact Us</a>
+            </nav>
+    
+        </div>
+    </header>
+    <br><br><br>
+    <div class="header1">
+        <h1>Heyy!! Volunteers</h1>
+        <p>
+            <span class="dynamic-slogan" id="slogan"></span>
+        </p>
+    </div>
+
+    <div class="container" id="login-container">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Login</h2>
+                <% if (error) { %>
+                    <div class="error"><%= error %></div>
+                <% } %>
+            </div>
+            <form id="login-form" action="/login" method="POST">
+                <label for="user">Email</label>
+                <input type="user" id="user" name="email" placeholder="Enter your username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <div class="toggle-link">
+                <p>Don't have an account? <a href="/signup" id="toggle-to-signup">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const slogans = [
+            "Be the change you want to see.",
+            "Together, we make a difference.",
+            "Helping hands save lives.",
+            "Join the force of hope and resilience."
+        ];
+        const sloganElement = document.getElementById('slogan');
+        let sloganIndex = 0;
+    
+        function changeSlogan() {
+            sloganElement.textContent = slogans[sloganIndex];
+            sloganIndex = (sloganIndex + 1) % slogans.length;
+        }
+    
+        // setInterval(changeSlogan, 3000); // Change slogan every 3 second
+        changeSlogan(); // Initialize the first slogan
+    
+        const loginContainer = document.getElementById('login-container');
+        const toggleToLogin = document.getElementById('toggle-to-login');
+    
+        toggleToLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginContainer.style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

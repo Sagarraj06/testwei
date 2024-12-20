@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULSYNC - Natural Disaster Management</title>
+    <link rel="stylesheet" href="./css/dashboardstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=FontName:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+             <img src="./images/soulsyncnew.png" alt="SOULSYNC Logo" onclick="redirectToHome()">
+              
+             <script>
+
+                function redirectToHome() {
+                    window.location.href = 'openingpage.html';
+                  }
+
+             </script>
+        
+        </div>
+
+        <nav class="nav-links">
+            <a href="./aboutus">About Us</a>
+            <a href="./contactus">Contact Us</a>
+        </nav>
+
+    </div>
+</header>
+
+<div class="hero">
+    <h1>Welcome to SOULSYNC</h1>
+    <p>"Uniting Souls to Combat Disasters, Restoring Hope Together"</p>
+    <a href="#" class="cta">Join Us Now</a>
+</div>
+
+<div class="user-volunteer">
+    <div class="card" id="user">
+        <h3>USER</h3>
+        <p>Access resources and stay prepared for natural disasters.</p>
+    </div>
+    <div class="card" id="vol">
+        <h3>VOLUNTEER</h3>
+        <p>Become part of our team and help communities in need.</p>
+    </div>
+</div>
+
+<div class="disaster-section">
+    <h1>How Our Team Works!!!</h1>
+
+    <div class="event">
+        <img src="Tsunami.jpeg" alt="Tsunami Image">
+        <div class="event-details">
+          <h2>Tsunami</h2>
+          <p>
+            We provide early warnings, assist in evacuation, and coordinate relief efforts to aid affected communities.
+          </p>
+        </div>
+      </div>
+      <br><hr><br>
+    
+    
+      <div class="event">
+        <img src="earthquake.jpeg" alt="Earthquake">
+        <div class="event-details">
+          <h2>Earthquake</h2>
+          <p>
+            Our team deploys rapid response units to rescue survivors, provide medical aid, and offer temporary shelter.
+          </p>
+        </div>
+      </div>
+    
+      <br><hr><br>
+
+      <!-- Landslides -->
+      <div class="event">
+        <img src="landslide.jpg" alt="Landslide">
+        <div class="event-details">
+          <h2>Landslides</h2>
+          <p>
+            We ensure road clearance, assist in relocation, and deliver essential supplies to stranded populations.
+          </p>
+        </div>
+      </div>
+
+      <br><hr><br>
+    
+      <!-- Floods -->
+      <div class="event">
+        <img src="floods.jpeg" alt="Flood">
+        <div class="event-details">
+          <h2>Floods</h2>
+          <p>
+            We monitor water levels, distribute relief packages, and support rehabilitation initiatives post-disaster.
+          </p>
+        </div>
+      </div>
+
+      <br><hr><br>
+    
+      <!-- Wildfires -->
+      <div class="event">
+        <img src="wildfires.jpeg" alt="Wildfire">
+        <div class="event-details">
+          <h2>Wildfires</h2>
+          <p>
+            Coordinating firefighting efforts, evacuation plans, and providing post-disaster counseling for affected individuals.
+          </p>
+        </div>
+      </div>
+</div>
+
+
+<footer>
+    &copy; 2024 SOULSYNC. All Rights Reserved.
+</footer>
+
+<script>
+  
+  // Animation on Scroll
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+          }
+      });
+  });
+
+  // Target all event elements
+  const events = document.querySelectorAll('.event');
+  events.forEach((event) => observer.observe(event));
+
+  const user = document.getElementById('user');
+  const vol = document.getElementById('vol');
+
+  user.addEventListener('click',function() {
+    window.location.href = '/victim'; 
+})
+  vol.addEventListener('click',function() {
+    window.location.href = '/login'; 
+})
+</script>
+
+</body>
+</html>
+
